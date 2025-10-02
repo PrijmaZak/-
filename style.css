@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER - Mobile First */
+header {
+  background: #333;
+  color: white;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.logo {
+  width: 150px;
+  height: 48px;
+  order: 1; /* Логотип первым */
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.site-name {
+  font-size: 20px;
+  text-align: center;
+  order: 2; /* Название сайта вторым */
+}
+
+.header-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  order: 3; /* Меню третьим */
+}
+
+.header-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  background: #444;
+  border-radius: 3px;
+  display: block;
+}
+
+.header-menu a:hover {
+  background: #555;
+}
+
+/* MAIN CONTENT - Mobile First */
+.content {
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* MAIN MENU - Mobile (вертикальный список) */
+.main-menu {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  order: 1; /* Меню первым на мобильных */
+}
+
+.main-menu a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.main-menu a:hover {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+/* CONTENT SECTIONS */
+.content-section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* MOBILE ORDER: Таблица ПЕРВОЙ, ссылки ВТОРЫМИ */
+#table {
+  order: 2; /* Таблица второй (после меню) */
+}
+
+#links {
+  order: 3; /* Ссылки третьими (после таблицы) */
+}
+
+#part {
+  order: 4;
+}
+
+#form {
+  order: 5;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* FORM */
+form {
+  width: 100%;
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+form input[type="radio"], form input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+form input[type="submit"] {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  cursor: pointer;
+  width: auto;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+form input[type="submit"]:hover {
+  background: #555;
+}
+
+/* FOOTER */
+footer {
+  background: #333;
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  padding: 0 20px;
+}
+
+/* LINKS STYLES */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul, ol {
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* IMAGES */
+img {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== DESKTOP STYLES ===== */
+@media (min-width: 768px) {
+  /* HEADER - Desktop */
+  .header-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  
+  .logo {
+    order: 1; /* Логотип первым */
+    width: 150px;
+    flex-shrink: 0;
+  }
+  
+  .site-name {
+    order: 2; /* Название сайта вторым */
+    font-size: 24px;
+    margin: 0;
+    flex: 1;
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .header-menu {
+    order: 3; /* Меню третьим */
+    flex-direction: row;
+    width: auto;
+    gap: 0;
+    flex-shrink: 0;
+  }
+  
+  .header-menu a {
+    background: transparent;
+    padding: 5px 10px;
+    margin-left: 20px;
+    display: inline;
+  }
+  
+  .header-menu a:hover {
+    background: #555;
+    border-radius: 3px;
+  }
+  
+  /* MAIN CONTENT - Desktop */
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* MAIN MENU - Desktop */
+  .main-menu {
+    text-align: center;
+    order: 1; /* Меню остается на своей позиции */
+  }
+  
+  .main-menu a {
+    display: inline;
+    margin: 0 15px;
+    padding: 5px 10px;
+  }
+  
+  /* DESKTOP ORDER: Ссылки ПЕРВЫМИ, таблица ВТОРОЙ */
+  #links {
+    order: 2; /* Ссылки вторыми (после меню) */
+  }
+  
+  #table {
+    order: 3; /* Таблица третьей (после ссылок) */
+  }
+  
+  #part {
+    order: 4;
+  }
+  
+  #form {
+    order: 5;
+  }
+  
+  /* FORM - Desktop */
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* FOOTER - Desktop */
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
